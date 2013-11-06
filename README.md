@@ -39,15 +39,18 @@ This grunt plugin is written in order to help developers test examples, that the
 Examples should be written in the format:
 
 ```
-```js(/javascript)
+<blink>
+```js(or javascript)
 //<exampleName>Example: <exampleDescription>
 ...
 ```
+</blink>
 ```
 
 For example:
 
 ```
+
 ```js
 // basicClassExample: Classes can be created
   
@@ -68,6 +71,7 @@ For example:
     });
 
 ```
+
 ```
 
 
