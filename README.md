@@ -5,12 +5,13 @@ This grunt plugin is written in order to help developers test examples, that the
 
 ## Installation
 
-`grunt docu-exmaples-tester`
+`npm install grunt-docu-exmaples-tester`
 
 
 ## Usage
 
-`grunt pull-examples` takes examples out of the documentation files, creates a test for each example
+`grunt pull-examples` takes examples out of the documentation files, creates a test for each example, if it not already exists.
+If it exists, the actual example will be pasted in it.
 
 `grunt push-examples` takes examples from the tests and pastes them into the documentation files
 
