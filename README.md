@@ -1,11 +1,11 @@
-# grunt-docu-exmaples-tester
+# grunt-docu-examples-tester
 
 This grunt plugin is written in order to help developers test examples, that they use in their documemtation.
 
 
 ## Installation
 
-`npm install grunt-docu-exmaples-tester`
+`npm install grunt-docu-examples-tester`
 
 
 ## Usage
