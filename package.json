@@ -1,0 +1,45 @@
+{
+  "name": "grunt-docu-examples-tester",
+  "title": "grunt-docu-examples-tester",
+  "description": "grunt plugin for testing examples from the documentation",
+  "homepage": "http://www.ps-webforge.com/",
+  "author": {
+    "name": "Yulia Bobkova <y.bobkova@ps-webforge.com>"
+  },
+  "contributors": [ 
+    {
+      "name": "Philipp Scheit",
+      "email": "p.scheit@ps-webforge.com"
+    } 
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ybobkova/grunt-docu-examples-tester"
+  },
+  "keywords": [
+    "documentation",
+    "examples",
+    "test"
+  ],
+  "licences": [
+    "MIT"
+  ],
+  "version": "1.0.0",
+  "scripts": {
+    "test": "grunt travis"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "mocha": "~1.14.0",
+    "chai": "~1.8.1",
+    "grunt-contrib-jshint": "~0.3",
+    "grunt-contrib-uglify": "~0.2",
+    
+  },
+  "dependencies": {
+    "escodegen": "~0.0.28",
+    "esprima": "~1.0.4",
+    "lodash": "~2.0",
+    "grunt": "~0.4"
+  }
+}

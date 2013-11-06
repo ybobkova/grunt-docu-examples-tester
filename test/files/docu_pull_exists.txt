@@ -1,0 +1,10 @@
+This is a simple documentation file, that is written, so that if you paste examples from this file to the test-files, one tests should be edited...
+
+```js
+// firstExample: has value as a property
+Cojoko.Class('ACME.Exchange.Price', {
+  properties: {
+    value: { is : 'g', required: true, isPrivate: true }
+  }
+});
+```

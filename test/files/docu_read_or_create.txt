@@ -1,0 +1,15 @@
+### basic class
+
+
+```js
+// ParseExample: Classes can be created
+//Here could be the text of your example.
+```
+
+```js
+// NonExistingExample: The test for this example doesn't exist
+ while (smile) {
+   var i = 500;
+   i++;
+ }
+```

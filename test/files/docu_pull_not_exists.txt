@@ -1,0 +1,11 @@
+... and another one, that should be created and then edited correspondingly
+
+```js
+// secondExample: has currency as a property
+Cojoko.Class('ACME.Exchange.Price', {
+  properties: {
+    currency: { is : 'g', required: true, isPrivate: true }
+
+  }
+});
+```

@@ -1,0 +1,7 @@
+### basic class
+
+
+```js
+// ParseExample: Classes can be created
+//Here could be the text of your example.
+```
