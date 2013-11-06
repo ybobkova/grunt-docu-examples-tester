@@ -42,13 +42,13 @@ Examples should be written in the format:
 ```js(/javascript)
 //<exampleName>Example: <exampleDescription>
 ...
-
 ```
 ```
 
 For example:
 
-'```js
+```
+```js
 // basicClassExample: Classes can be created
   
     Cojoko.Class('ACME.Exchange.Share', {
@@ -67,7 +67,8 @@ For example:
       }
     });
 
-```'
+```
+```
 
 
 ### Notices to the template
@@ -78,7 +79,8 @@ For example:
 
 For example:
 
-'```js
+```
+```js
 describe("Classes", function () {
   it("can be created", function () {
     /* beginning of the example */
@@ -101,7 +103,9 @@ describe("Classes", function () {
     assert.equal(true, true);
   });
 });
-```'
+```
+```
+
 
 ## License
 
