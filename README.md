@@ -17,22 +17,22 @@ This grunt plugin is written in order to help developers test examples, that the
 
 ## Settings
 
-'
-"pull-examples": {
-  def: {
-    src: ["docs/**/*.md"], // path to the documentation files
-    templates: ["lib/tasks/files/"], // path to the test-templates
-    tests: ["tests/Cojoko/examples/"]  //path to the tests
-  }
-},
 
-"push-examples": {
-  def: {
-    src: ["docs/**/*.md"], //path to the documentation files
-    tests: ["tests/Cojoko/examples/"]  //path to the test files     
-  }
-}
-'
+"pull-examples": {<br />
+  def: {<br />
+    src: ["docs/**/*.md"], // path to the documentation files<br />
+    templates: ["lib/tasks/files/"], // path to the test-templates<br />
+    tests: ["tests/Cojoko/examples/"]  //path to the tests<br />
+  }<br />
+}<br />
+
+"push-examples": {<br />
+  def: {<br />
+    src: ["docs/**/*.md"], //path to the documentation files<br />
+    tests: ["tests/Cojoko/examples/"]  //path to the test files<br />  
+  }<br />
+}<br />
+
 
 
 ### Notice to the examples in the documentation files
