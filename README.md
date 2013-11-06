@@ -39,20 +39,17 @@ This grunt plugin is written in order to help developers test examples, that the
 Examples should be written in the format:
 
 ```
-<blink>
-```js(or javascript)
-//<exampleName>Example: <exampleDescription>
-...
-```
-</blink>
+    ```js(or javascript)
+    //<exampleName>Example: <exampleDescription>
+    ...
+    ```
 ```
 
 For example:
 
 ```
-
-```js
-// basicClassExample: Classes can be created
+    ```js
+    // basicClassExample: Classes can be created
   
     Cojoko.Class('ACME.Exchange.Share', {
 
@@ -69,9 +66,7 @@ For example:
         }
       }
     });
-
-```
-
+    ```
 ```
 
 
@@ -84,30 +79,30 @@ For example:
 For example:
 
 ```
-```js
-describe("Classes", function () {
-  it("can be created", function () {
-    /* beginning of the example */
-    Cojoko.Class("ACME.Exchange.Share", {
-      properties: {
-        title: {
-          is: "rw",
-          required: true,
-          isPrivate: true
-        }
-      },
-      methods: {
-        toString: function () {
-          return this.title + " (" + this.isin + "/" + this.wkn + ")";
-        }
-      }
-    });
-    /* end of the example */
+    ```js
+    describe("Classes", function () {
+      it("can be created", function () {
+        /* beginning of the example */
+        Cojoko.Class("ACME.Exchange.Share", {
+          properties: {
+            title: {
+              is: "rw",
+              required: true,
+              isPrivate: true
+            }
+          },
+          methods: {
+            toString: function () {
+              return this.title + " (" + this.isin + "/" + this.wkn + ")";
+            }
+          }
+        });
+        /* end of the example */
     
-    assert.equal(true, true);
-  });
-});
-```
+        assert.equal(true, true);
+      });
+    });
+    ```
 ```
 
 
