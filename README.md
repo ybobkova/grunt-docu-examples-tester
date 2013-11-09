@@ -35,12 +35,12 @@ If it exists, the actual example will be pasted in it.
 }
 ```
 
-### Notice to the examples in the documentation files
+### examples format
 
-Examples should be written in the format:
+The examples in the documentation files (provided as `src`) should be written in the format:
 
 ```
-    ```js(or javascript)
+    ```javascript
     //<exampleName>Example: <exampleDescription>
     ...
     ```
@@ -70,46 +70,55 @@ For example:
     ```
 ```
 
+> it does not matter if you use `js` or `javascript` on the code fence
 
-### Notices to the template
 
-1. The template can contain placeholders <exampleName> and <exampleDescription>. Thay will be changed correspondingly.
+### test template format
 
-2. The test template should contain lines /*beginning of the example*/ and /*end of the example*/, so the tasks can paste and parse an example correctly.
+1. The template can contain placeholders <exampleName> and <exampleDescription>. They will be changed correspondingly.
 
-For example:
+For example a test template could look like this:
 
+```js
+describe("<exampleName>", function () {
+  it("<exampleDescription>", function () {
+    /* beginning of the example */
+    /* end of the example */
+
+    assert.equal(true, true);
+  });
+});
 ```
-    ```js
-    describe("Classes", function () {
-      it("can be created", function () {
-        /* beginning of the example */
-        Cojoko.Class("ACME.Exchange.Share", {
-          properties: {
-            title: {
-              is: "rw",
-              required: true,
-              isPrivate: true
-            }
-          },
-          methods: {
-            toString: function () {
-              return this.title + " (" + this.isin + "/" + this.wkn + ")";
-            }
-          }
-        });
-        /* end of the example */
-    
-        assert.equal(true, true);
-      });
+
+2. The test template should contain lines /*beginning of the example*/ and /*end of the example*/, so that the tasks can paste and parse an example correctly.
+
+And the replaced test would look like this:
+
+```js
+describe("basicClassExample", function () {
+  it("Classes can be created", function () {
+    /* beginning of the example */
+    Cojoko.Class("ACME.Exchange.Share", {
+      properties: { 
+        title: { is: "rw", required: true, isPrivate: true }
+      },
+      methods: {
+        toString: function () {
+          return this.title + " (" + this.isin + "/" + this.wkn + ")";
+        }
+      }
     });
-    ```
+    /* end of the example */
+
+    assert.equal(true, true);
+  });
+});
 ```
 
 
 ## License
 
-Copyright (c) 2013 ps-webforge.com
+Copyright (c) 2013 ps-webforge.com, Yulia Bobkova
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
