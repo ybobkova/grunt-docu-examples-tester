@@ -142,7 +142,7 @@ module.exports = function() {
       ast = escodegen.attachComments(ast, ast.comments, ast.tokens);
       exampleFromTest = escodegen.generate(ast, escodegenOptions);
       
-      exampleFromTest = fence + "\n" + exampleFromTest + "```";
+      exampleFromTest = fence + "\n" + exampleFromTest + "\n```";
 
       return exampleFromTest;
     };
