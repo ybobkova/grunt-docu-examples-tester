@@ -10,7 +10,7 @@ This grunt plugin is written in order to help developers test examples, that the
 
 ## Usage
 
-`grunt pull-examples` takes examples out of the documentation files, creates a test for each example, if it not already exists.
+`grunt pull-examples` takes examples out of the documentation files, creates a test for each example, if it does not already exist.
 If it exists, the actual example will be pasted in it.
 
 `grunt push-examples` takes examples from the tests and pastes them into the documentation files
@@ -39,16 +39,16 @@ If it exists, the actual example will be pasted in it.
 
 The examples in the documentation files (provided as `src`) should be written in the format:
 
-```
+
     ```javascript
     //<exampleName>Example: <exampleDescription>
     ...
     ```
-```
+
 
 For example:
 
-```
+
     ```js
     // basicClassExample: Classes can be created
   
@@ -68,14 +68,13 @@ For example:
       }
     });
     ```
-```
 
 > it does not matter if you use `js` or `javascript` on the code fence
 
 
 ### test template format
 
-1. The template can contain placeholders <exampleName> and <exampleDescription>. They will be changed correspondingly.
+* The template can contain placeholders `<exampleName>` and `<exampleDescription>`. They will be changed correspondingly.
 
 For example a test template could look like this:
 
@@ -90,7 +89,7 @@ describe("<exampleName>", function () {
 });
 ```
 
-2. The test template should contain lines /*beginning of the example*/ and /*end of the example*/, so that the tasks can paste and parse an example correctly.
+* The test template should contain lines `/* beginning of the example */` and `/* end of the example */`, so that the tasks can paste and parse an example correctly.
 
 And the replaced test would look like this:
 
