@@ -164,7 +164,7 @@ describe('addCodeFenceAndCommentToExample()', function() {
     var example = '// I am a big Cheeseburger';
     var fence = '```js';
     var exampleToPaste = examples.addCodeFenceAndCommentToExample(example, fence);
-    assert.equal(exampleToPaste, '```js\n// I am a big Cheeseburger\n```', 'the example has a wrong comment and code fence');
+    assert.equal(exampleToPaste, '```js\n// I am a big Cheeseburger\n\n```', 'the example has a wrong comment and code fence');
   });
 });
 

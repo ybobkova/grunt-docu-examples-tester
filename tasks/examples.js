@@ -121,6 +121,7 @@ module.exports = function() {
     };
 
     this.addCodeFenceAndCommentToExample = function(exampleFromTest, fence){ 
+
       var esprimaOptions = {
         range: true, 
         tokens: true, 
