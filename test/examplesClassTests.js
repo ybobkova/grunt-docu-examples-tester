@@ -12,7 +12,7 @@ var ExamplesClass = examplesModule();
 
 describe('push()', function() {
   it("should use all of the needed functions correctly and change the documentation files correspondingly", function() {
-    var options = {src: ['test/files/docu_push_before.txt'], tests: 'test/files/'};
+    var options = {src: 'test/files/docu_push_before.txt', tests: 'test/files/'};
     var examples = new ExamplesClass(options);
     var docu_before = fs.readFileSync(options.src).toString();
     fs.writeFileSync('test/files/docu_push_after.txt', docu_before);

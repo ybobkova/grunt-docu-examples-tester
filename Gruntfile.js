@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       }
     },
     simplemocha: {
-      src: ['test/*.js']
+      src: ['test/examplesClassTests.js']
     },
     concat: {
       options: {
