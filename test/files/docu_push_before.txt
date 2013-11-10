@@ -2,6 +2,6 @@
 
 
 ```js
-// ParseExample: Classes can be created
+// parseExample: Classes can be created
 //Here could be the text of your example.
 ```
