@@ -7,7 +7,7 @@ var chai = require('chai'),
   expect = chai.expect,
   assert = chai.assert;
 
-var examplesModule = require('../lib/tasks/examples');
+var examplesModule = require('../tasks/examples');
 var ExamplesClass = examplesModule();
 
 describe('push()', function() {

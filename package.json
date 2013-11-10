@@ -4,11 +4,11 @@
   "description": "grunt plugin for testing examples from the documentation",
   "homepage": "http://www.ps-webforge.com/",
   "author": "Yulia Bobkova <y.bobkova@ps-webforge.com>",
-  "contributors": [ 
+  "contributors": [
     {
       "name": "Philipp Scheit",
       "email": "p.scheit@ps-webforge.com"
-    } 
+    }
   ],
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
     "mocha": "~1.14.0",
     "chai": "~1.8.1",
     "grunt-contrib-jshint": "~0.3",
-    "grunt-contrib-uglify": "~0.2"
+    "grunt-contrib-uglify": "~0.2",
+    "grunt-simple-mocha": "~0.4.0"
   },
   "dependencies": {
     "escodegen": "~0.0.28",

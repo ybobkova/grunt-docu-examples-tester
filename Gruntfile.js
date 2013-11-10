@@ -3,23 +3,7 @@ module.exports = function(grunt) {
   
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  var port = 8000;
-  var hostname = 'localhost';
-  var nodepath = require("path");
-  
-  var mapToUrl = function(files) {
-    var baseUrl = 'http://'+hostname+':'+port+'/';
-    
-    var urls = grunt.util._.map(
-      grunt.file.expand(files),
-      function (file) {
-        return baseUrl+file;
-      }
-    );
-    
-    return urls;
-  };
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
   // Project configuration.
   grunt.initConfig({
@@ -50,6 +34,9 @@ module.exports = function(grunt) {
         }
       }
     },
+    simplemocha: {
+      src: ['test/*.js']
+    },
     concat: {
       options: {
         banner:
@@ -75,5 +62,5 @@ module.exports = function(grunt) {
 
   grunt.task.registerTask('pack', ['jshint', 'requirejs']);
   grunt.task.registerTask('default', ['jshint']);
-  grunt.task.registerTask('travis', ['jshint']);
+  grunt.task.registerTask('travis', ['jshint', 'simplemocha']);
 };
