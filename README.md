@@ -42,7 +42,7 @@ The examples in the documentation files (provided as `src`) should be written in
 
     ```javascript
     //<exampleName>Example: <exampleDescription>
-    ...
+    
     ```
 
 
@@ -89,9 +89,9 @@ describe("<exampleName>", function () {
 });
 ```
 
-* The test template should contain lines `/* beginning of the example */` and `/* end of the example */`, so that the tasks can paste and parse an example correctly.
+* The test template must contain lines `/* beginning of the example */` and `/* end of the example */`, so that the tasks can paste and parse an example correctly.
 
-And the replaced test would look like this:
+The replaced test would look like this:
 
 ```js
 describe("basicClassExample", function () {
