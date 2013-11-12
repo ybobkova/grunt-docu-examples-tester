@@ -38,9 +38,9 @@ describe('pull()', function() {
     var first_after = fs.readFileSync('test/files/firstExampleTest.js').toString();
     var first_expected = fs.readFileSync('test/files/firstExampleTest_expected.js').toString();
 
-    assert.equal(first_after, first_expected, 'the example is correctly exported');
-
     fs.writeFileSync('test/files/firstExampleTest.js', first_before);
+
+    assert.equal(first_after, first_expected, 'the example is correctly exported');
   });
 
   before(function runBefore() {
@@ -65,9 +65,9 @@ describe('pasteExampleToTest()', function() {
   it('should paste an example to the test-file in an appropriate place', function() {
     var options = {tests: 'test/files/parseExampleTest.js'};
     var examples = new ExamplesClass(options);
-    var example = "// Welcome to the jungle!";
+    var example = "```js\n// Welcome to the jungle!\n```";
     var test = fs.readFileSync(options.tests).toString();
-    test = examples.pasteExampleToTest(test, example);
+    test = examples.pasteExampleToTest(test, example, "```js\n");
 
     var expected = 'test/files/parseExampleTest_expected.js';
     var test_expected = fs.readFileSync(expected).toString();
@@ -153,7 +153,7 @@ describe('parseExampleFromTest()', function() {
     var examples = new ExamplesClass(options);
     var parsedExample = examples.parseExampleFromTest('parseExample');  
 
-    assert.equal(parsedExample, '      // Here could be the text of your example.', 'the example is incorrectly parsed from the test file');
+    assert.equal(parsedExample, '      console.log("true!");', 'the example is incorrectly parsed from the test file');
   });
 });
 
@@ -161,10 +161,10 @@ describe('addCodeFenceAndCommentToExample()', function() {
   it("should return the example with te code fence and comment", function() {
     var options = {};
     var examples = new ExamplesClass(options);
-    var example = '// I am a big Cheeseburger';
-    var fence = '```js';
+    var example = '  function () {\n    console.log("Hi!");\n  }';
+    var fence = '```js\n';
     var exampleToPaste = examples.addCodeFenceAndCommentToExample(example, fence);
-    assert.equal(exampleToPaste, '```js\n// I am a big Cheeseburger\n\n```', 'the example has a wrong comment and code fence');
+    assert.equal(exampleToPaste, '```js\nfunction () {\n  console.log("Hi!");\n}\n```', 'the example has a wrong comment and code fence');
   });
 });
 

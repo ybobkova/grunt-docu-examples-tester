@@ -16,15 +16,9 @@ describe("first", function () {
     setTimeout(done, 300);
     cojokoLoader(["Cojoko"], function (Cojoko) {
       /* beginning of the example */
-      Cojoko.Class("ACME.Exchange.Price", {
-        properties: {
-          value: {
-            is: "g",
-            required: true,
-            isPrivate: true
-          }
-        }
-      });
+      function() {
+        console.log("hi!");
+      }
       /* end of the example */
       assert.equal(true, true);
     });

@@ -10,9 +10,10 @@ module.exports = function() {
     var testTemplates = options.testTemplates;
     
     var commentWithExampleRegexp = new RegExp("```(?:javascript|js)\\s*\\n+//(.|\\n|\\s)*?Example:(.|\\n|\\s)*?```", "g");
-    var commentRegexp = new RegExp("```(?:javascript|js)\\s*//.*", "g");
+    var commentRegexp = new RegExp("```(?:javascript|js)\\s*//.*\\n", "g");
     var exampleNameRegexp = new RegExp("(?://).*?(?=:)", "g");
-    var exampleInTestRegexp = new RegExp("\\/\\*\\s*beginning of the example\\s*\\*\\/\\s*\\n(.|\\n|\\s)*?(?=\\n\\s*\\/\\*\\s*end of the example\\s*\\*\\/)", "g");
+    var exampleInTestRegexp = new RegExp("\\s*\\/\\*\\s*beginning of the example\\s*\\*\\/\\s*\\n(.|\\n|\\s)*?(?=\\s*\\/\\*\\s*end of the example\\s*\\*\\/)", "g");
+    var exampleCommentRegExp = new RegExp("\\s*\\/\\*\\s*beginning of the example\\s*\\*\\/\\s*");
 
     this.push = function(docuPaths) {
       _.each(docuPaths, function(path) {
@@ -47,31 +48,12 @@ module.exports = function() {
 
     this.pasteExampleToTest = function(test, example, jsAndComment) {
       var examplePlace = test.match(exampleInTestRegexp).toString();
-      examplePlace = examplePlace.replace(/\/\*\s*beginning of the example\s*\*\/\s*\n/, "");
-      example = example.replace(jsAndComment, '').replace("```", '');
+      var indent = examplePlace.match(/([^\n]*)\/\*\s*beginning of the example\s*\*\/\s*\n/)[1].toString();
+      example = example.replace(jsAndComment, '');
+      example = example.replace("\n```", '');
+      example = example.split("\n").join("\n" + indent);
+      examplePlace = examplePlace.replace(exampleCommentRegExp, "");
       test = test.replace(examplePlace, example);
-
-      var esprimaOptions = {
-        range: true, 
-        tokens: true, 
-        comment: true
-      };
-
-      var escodegenOptions = {
-        format: {
-          indent: {
-            style: '  ',
-            base: 0
-          },
-          quotes: 'double'
-        },
-        comment: true
-      };
-
-      var ast = esprima.parse(test, esprimaOptions);
-      ast = escodegen.attachComments(ast, ast.comments, ast.tokens);
-      test = escodegen.generate(ast, escodegenOptions);
-
       return test;
     };
 
@@ -116,35 +98,15 @@ module.exports = function() {
       var testPath = options.tests + exampleName + 'Test.js';
       var testCode = fs.readFileSync(testPath).toString();
       var example = testCode.match(exampleInTestRegexp);
-      example = example.toString().replace(/\/\*\s*beginning of the example\s*\*\/\s*\n/, "");
+      example = example.toString().replace(/\s*\/\*\s*beginning of the example\s*\*\/\s*\n/, "");
       return example;
     };
 
-    this.addCodeFenceAndCommentToExample = function(exampleFromTest, fence){ 
-
-      var esprimaOptions = {
-        range: true, 
-        tokens: true, 
-        comment: true
-      };
-
-      var escodegenOptions = {
-        format: {
-          indent: {
-            style: '  ',
-            base: 0
-          },
-          quotes: 'double'
-        },
-        comment: true
-      };
-
-      var ast = esprima.parse(exampleFromTest, esprimaOptions);
-      ast = escodegen.attachComments(ast, ast.comments, ast.tokens);
-      exampleFromTest = escodegen.generate(ast, escodegenOptions);
-      
-      exampleFromTest = fence + "\n" + exampleFromTest + "\n```";
-
+    this.addCodeFenceAndCommentToExample = function(exampleFromTest, fence) {
+      var minusIndent = exampleFromTest.match("( *).*?")[1];
+      exampleFromTest = exampleFromTest.replace(minusIndent, "");
+      exampleFromTest = exampleFromTest.split("\n" + minusIndent).join("\n");
+      exampleFromTest = fence + exampleFromTest + "\n```";
       return exampleFromTest;
     };
 

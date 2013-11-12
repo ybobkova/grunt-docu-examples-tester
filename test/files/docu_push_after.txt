@@ -2,6 +2,10 @@
 
 
 ```js
-// parseExample: Classes can be created
-// Here could be the text of your example.
+// pushExample: Classes can be created
+Cojoko.Class("ACME.Exchange.Price", {
+  properties: {
+    value: {is: "g", required: true, isPrivate: true}
+  }
+});
 ```

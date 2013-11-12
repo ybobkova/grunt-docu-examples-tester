@@ -2,9 +2,9 @@ This is a simple documentation file, that is written, so that if you paste examp
 
 ```js
 // firstExample: has value as a property
-Cojoko.Class('ACME.Exchange.Price', {
+Cojoko.Class("ACME.Exchange.Price", {
   properties: {
-    value: { is : 'g', required: true, isPrivate: true }
+    value: { is : "g", required: true, isPrivate: true }
   }
 });
 ```

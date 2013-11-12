@@ -5,7 +5,6 @@
 Cojoko.Class('ACME.Exchange.Price', {
   properties: {
     currency: { is : 'g', required: true, isPrivate: true }
-
   }
 });
 ```

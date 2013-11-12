@@ -22,7 +22,7 @@ describe("pasteName", function () {
     setTimeout(done, 300);
     cojokoLoader(['Cojoko'], function (Cojoko) {
       /* beginning of the example */
-      // The example will be pasted here
+      // Place for the example
       /* end of the example */
       assert.equal(true, true);
 

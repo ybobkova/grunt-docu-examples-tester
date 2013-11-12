@@ -1,6 +1,6 @@
 ﻿This is the File, where I test, if the function pasteExampleToDocs() pastes the text that I give right.
 
-In the original file could stay some examples, or just explanations and comment, as usual in documentation files. The function should find the example, that I want to be changed and change it with the text I give it. In this file, the function must find the example with the comment "//BlaExample: here is the new example pasted" and change the example text into 'I am the new example without code fence and comment without changing the comment itself.
+In the original file could stay some examples, or just explanations and comment, as usual in documentation files. The function should find the example, that I want to be changed and change it with the text I give it. In this file, the function must find the example with the comment "//BlaExample: here is the new example pasted" and change the example text of the example without changing the comment itself.
 
 This is that example:
 

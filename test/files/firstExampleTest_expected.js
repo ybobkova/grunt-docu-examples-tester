@@ -18,11 +18,7 @@ describe("first", function () {
       /* beginning of the example */
       Cojoko.Class("ACME.Exchange.Price", {
         properties: {
-          value: {
-            is: "g",
-            required: true,
-            isPrivate: true
-          }
+          value: { is : "g", required: true, isPrivate: true }
         }
       });
       /* end of the example */

@@ -74,7 +74,17 @@ For example:
 
 ### test template format
 
-* The template can contain placeholders `<exampleName>` and `<exampleDescription>`. They will be changed correspondingly.
+* The template can contain the lines `<exampleName>` and `<exampleDescription>`. They will be changed correspondingly.
+
+* The test template must contain lines 
+```
+/* beginning of the example */
+// Place for the example
+/* end of the example */
+```
+
+so that the tasks can paste and parse an example correctly.
+
 
 For example a test template could look like this:
 
@@ -82,6 +92,7 @@ For example a test template could look like this:
 describe("<exampleName>", function () {
   it("<exampleDescription>", function () {
     /* beginning of the example */
+    // Place for the example
     /* end of the example */
 
     assert.equal(true, true);
@@ -89,7 +100,6 @@ describe("<exampleName>", function () {
 });
 ```
 
-* The test template should contain lines `/* beginning of the example */` and `/* end of the example */`, so that the tasks can paste and parse an example correctly.
 
 And the replaced test would look like this:
 
@@ -113,7 +123,11 @@ describe("basicClassExample", function () {
   });
 });
 ```
+## Migration
 
+### 1.0.0 => 1.1.0
+
+* The examples are now correctly indented, new template rules
 
 ## License
 
