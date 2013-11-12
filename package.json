@@ -23,7 +23,7 @@
   "licences": [
     "MIT"
   ],
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "test": "grunt travis"
   },
@@ -36,8 +36,6 @@
     "grunt-simple-mocha": "~0.4.0"
   },
   "dependencies": {
-    "escodegen": "~0.0.28",
-    "esprima": "~1.0.4",
     "lodash": "~2.0",
     "grunt": "~0.4"
   }

@@ -4,8 +4,6 @@ module.exports = function() {
     var that = this;
     var _ = require('lodash');
     var fs = require('fs');
-    var esprima = require('esprima');
-    var escodegen = require('escodegen');
     var docuPaths = options.src;
     var testTemplates = options.testTemplates;
     
