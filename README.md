@@ -74,9 +74,10 @@ For example:
 
 ### test template format
 
-* The template can contain the lines `<exampleName>` and `<exampleDescription>`. They will be changed correspondingly.
+* The template can contain placeholders `<exampleName>` and `<exampleDescription>`. They will be changed correspondingly.
 
 * The test template must contain lines 
+
 ```
 /* beginning of the example */
 // Place for the example
@@ -101,11 +102,12 @@ describe("<exampleName>", function () {
 ```
 
 
+
 And the replaced test would look like this:
 
 ```js
-describe("basicClassExample", function () {
-  it("Classes can be created", function () {
+describe("basicClass", function () {
+  it("can have properties and methods", function () {
     /* beginning of the example */
     Cojoko.Class("ACME.Exchange.Share", {
       properties: { 
