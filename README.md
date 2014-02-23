@@ -1,6 +1,6 @@
 # grunt-docu-examples-tester [![Build Status](https://travis-ci.org/ybobkova/grunt-docu-examples-tester.png?branch=master)](https://travis-ci.org/ybobkova/grunt-docu-examples-tester)
 
-This grunt plugin is written in order to help developers test examples, that they use in their documemtation.
+This grunt plugin is written in order to help developers test examples, that they use in their documentation.
 
 
 ## Installation
