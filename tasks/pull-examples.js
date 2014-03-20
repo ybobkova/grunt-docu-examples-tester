@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  grunt.registerMultiTask ('pull-examples', 'Use push-examples to paste examples from the documentation into the tests', function() {
+  grunt.registerMultiTask ('pull-examples', 'Use pull-examples to paste examples from the documentation into the tests', function() {
 
     var options = {src: this.filesSrc, tests: this.data.tests, testTemplates: this.data.templates};
     var examplesModule = require('./examples');
